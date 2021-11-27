@@ -1,0 +1,35 @@
+<div class="container mb-5">
+  <h2>Login Form</h2>
+  <div class="card mt-5">
+    <div class="card-header bg-warning">LOGIN</div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="userName">Username:</label>
+          <input type="text"
+                 class="form-control"
+                 id="userName"
+                 placeholder="Enter user name"
+                 name="userName"
+                 [(ngModel)]="newUser.userName">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password"
+                 class="form-control"
+                 id="pwd"
+                 placeholder="Enter password"
+                 name="pswd"
+                 [(ngModel)]="newUser.userPassword">
+        </div>
+      </form>
+    </div>
+    <div class="card-footer bg-warning">
+      <button
+        type="button"
+        class="btn btn-danger mr-5"
+        (click)="validateLogin()">Login</button>
+      <button type="reset" class="btn btn-danger">Clear</button>
+    </div>
+  </div>
+</div>
