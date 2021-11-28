@@ -11,13 +11,13 @@ export class UserService {
   validateUser(user: User){
     // consume endpoint to validate the user
     if(user.userName == "Sam" && user.userPassword == "admin"){
-      user.userId = 1;
+      user.userID = 1;
       user.userName = "Sam";
       user.userType = "manager";
       user.userAddress = "Atlanta";
       user.userEmail = "ox1@g.com"
     } else if(user.userName == "Priya" && user.userPassword == "emp"){
-      user.userId = 2;
+      user.userID = 2;
       user.userName = "Priya";
       user.userType = "employee";
       user.userAddress = "Marietta";
