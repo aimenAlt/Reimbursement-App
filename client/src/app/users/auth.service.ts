@@ -33,6 +33,12 @@ export class AuthService {
     return user.userType;
   }
 
+  retrieveUserID() {
+    let data: any = sessionStorage.getItem("userData");
+    let user: User = JSON.parse(data == null ?  '' : data);
+    return user.userID;
+  }
+
 
   constructor() { }
 }

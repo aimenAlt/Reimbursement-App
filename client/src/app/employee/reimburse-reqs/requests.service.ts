@@ -17,4 +17,8 @@ export class RequestService {
     return this.http.post<Request>(this.baseUrl, newReq);
   }
 
+  getAllEmpReqs(employeeID: number): Observable<Request[]>{
+    return this.http.get<Request[]>(this.baseUrl + "/" + employeeID);
+  }
+
 }

@@ -1,1 +1,34 @@
 <p>submit-req works!</p>
+
+<div>
+  <form #addForm="ngForm" class="form-inline tm-5" (submit)="addRequest()">
+    <label for="reqDescription" class="mb-2 mr-sm-2">Description:</label>
+    <input
+      type="text"
+      class="form-control mb-2 mr-sm-2"
+      id="reqDescription"
+      placeholder="Enter Request Description"
+      name="reqDescription"
+      required
+      #reqDesc="ngModel"
+      [(ngModel)]="newReq.description">
+    <span
+      *ngIf="reqDesc.invalid && reqDesc.touched"
+      class="text-danger small">Request description required!</span>
+    <label for="reqCost" class="mb-2 mr-sm-2">Cost:</label>
+    <input
+      type="text"
+      class="form-control mb-2 mr-sm-2"
+      id="reqCost"
+      placeholder="Enter Cost"
+      name="reqCost"
+      required
+      #reqCost="ngModel"
+      [(ngModel)]="newReq.cost">
+    <span *ngIf="reqCost.invalid && reqCost.touched" class="text-danger small">Request cost required!</span>
+    <button
+      type="submit"
+      [disabled]="!addForm.valid"
+      class="btn btn-primary mb-2">ADD</button>
+  </form>
+</div>

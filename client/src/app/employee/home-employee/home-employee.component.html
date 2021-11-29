@@ -9,22 +9,22 @@
     <li
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="submit-req">Submit Request</a>
+      <a class="nav-link" routerLink="/submit-req">Submit Request</a>
     </li>
     <li
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="view-req">View Requests</a>
+      <a class="nav-link" routerLink="/view-reqs">View Requests</a>
     </li>
     <li
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="user-info"> User Info </a>
+      <a class="nav-link" routerLink="/edit-user"> User Info </a>
     </li>
     <li
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="" (click)="logOut()" >Log Out</a>
+      <a class="nav-link" routerLink="/" (click)="logOut()" >Log Out</a>
     </li>
   </ul>
 </nav>

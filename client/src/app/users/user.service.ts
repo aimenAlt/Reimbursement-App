@@ -1,23 +1,40 @@
 import { Injectable } from '@angular/core';
 import {User} from "./user.model";
+import {HttpClient} from "@angular/common/http";
+import { Observable } from 'rxjs';
+
+import {Request} from "../employee/reimburse-reqs/request.model";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
-  constructor() { }
+  baseUrl = "/api/users";
+
+  constructor(private http: HttpClient ) { }
+
+
+  getAllEmployees(): Observable<User[]>{
+    return this.http.get<User[]>(this.baseUrl + '/employees');
+  }
+
+  updateUser(user: User): Observable<User>{
+    return this.http.put<User>(this.baseUrl, user);
+  }
+
 
   validateUser(user: User){
     // consume endpoint to validate the user
     if(user.userName == "Sam" && user.userPassword == "admin"){
-      user.userId = 1;
+      user.userID = 1;
       user.userName = "Sam";
       user.userType = "manager";
       user.userAddress = "Atlanta";
       user.userEmail = "ox1@g.com"
     } else if(user.userName == "Priya" && user.userPassword == "emp"){
-      user.userId = 2;
+      user.userID = 2;
       user.userName = "Priya";
       user.userType = "employee";
       user.userAddress = "Marietta";
@@ -25,5 +42,16 @@ export class UserService {
     }
     return user;
   }
+
+  newValidateUser(user: User): Observable<User>{
+    // consume endpoint to validate the user
+    return this.http.get<User>(this.baseUrl + '/login', {
+      params: {
+        userName: user.userName,
+        password: user.userPassword
+      }
+    });
+  }
+
 
 }
