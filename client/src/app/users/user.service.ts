@@ -9,7 +9,7 @@ import {Request} from "../employee/reimburse-reqs/request.model";
 
 export class UserService {
 
-  baseUrl = "/api/user";
+  baseUrl = "/api/users";
 
   constructor(private http: HttpClient ) { }
 
