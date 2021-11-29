@@ -11,6 +11,7 @@ import {SubmitReqComponent} from "./employee/reimburse-reqs/submit-req/submit-re
 import {HttpClientModule} from "@angular/common/http";
 import { ViewReqsComponent } from './employee/reimburse-reqs/view-reqs/view-reqs.component';
 import {EditUserComponent} from "./users/edit-user/edit-user.component";
+import { ViewEmployeeReqsComponent } from './manager/reimburse-reqs/view-employee-reqs/view-employee-reqs.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {EditUserComponent} from "./users/edit-user/edit-user.component";
     HomeManagerComponent,
     SubmitReqComponent,
     ViewReqsComponent,
-    EditUserComponent
+    EditUserComponent,
+    ViewEmployeeReqsComponent
   ],
   imports: [
     BrowserModule,
