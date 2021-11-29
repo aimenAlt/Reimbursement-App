@@ -1,1 +1,26 @@
 <p>view-reqs works!</p>
+
+<h2>List of Requests</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Cost</th>
+    <th>Date</th>
+    <th>Status</th>
+    <th>Image</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let req of allReqs">
+    <td>{{ req.id }}</td>
+    <td>{{ req.description}}</td>
+    <td>{{ req.cost}}</td>
+    <td>{{ req.date}}</td>
+    <td>{{ req.status}}</td>
+    <!--    <td><img [src]="req.bookImage" height="50px" width="80px"/></td>-->
+  </tr>
+  </tbody>
+</table>

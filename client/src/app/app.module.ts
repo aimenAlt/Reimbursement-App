@@ -9,8 +9,8 @@ import { HomeEmployeeComponent } from './employee/home-employee/home-employee.co
 import { HomeManagerComponent } from './manager/home-manager/home-manager.component';
 import {SubmitReqComponent} from "./employee/reimburse-reqs/submit-req/submit-req.component";
 import {HttpClientModule} from "@angular/common/http";
-import { ViewReqComponent } from './employee/reimburse-reqs/view-req/view-req.component';
 import { ViewReqsComponent } from './employee/reimburse-reqs/view-reqs/view-reqs.component';
+import {EditUserComponent} from "./users/edit-user/edit-user.component";
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { ViewReqsComponent } from './employee/reimburse-reqs/view-reqs/view-reqs
     HomeEmployeeComponent,
     HomeManagerComponent,
     SubmitReqComponent,
-    ViewReqComponent,
-    ViewReqsComponent
+    ViewReqsComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

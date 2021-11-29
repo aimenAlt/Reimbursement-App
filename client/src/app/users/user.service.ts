@@ -1,12 +1,23 @@
 import { Injectable } from '@angular/core';
 import {User} from "./user.model";
+import {HttpClient} from "@angular/common/http";
+import {Request} from "../employee/reimburse-reqs/request.model";
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
-  constructor() { }
+  baseUrl = "/api/user";
+
+  constructor(private http: HttpClient ) { }
+
+
+
+  updateUser(user: User){
+    return this.http.put<Request>(this.baseUrl, user);
+  }
 
   validateUser(user: User){
     // consume endpoint to validate the user

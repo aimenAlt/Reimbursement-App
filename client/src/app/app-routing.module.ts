@@ -7,13 +7,15 @@ import {HomeEmployeeComponent} from "./employee/home-employee/home-employee.comp
 import {SubmitReqComponent} from "./employee/reimburse-reqs/submit-req/submit-req.component";
 import {AdminGuard} from "./users/admin.guard";
 import {ViewReqsComponent} from "./employee/reimburse-reqs/view-reqs/view-reqs.component";
+import {EditUserComponent} from "./users/edit-user/edit-user.component";
 
 const routes: Routes= [
   {path:'', component: LoginComponent},
-  {path:'home-manager', component: HomeManagerComponent},
-  {path:'home-employee', component: HomeEmployeeComponent},
-  {path:'submit-req', component: SubmitReqComponent},
-  {path:'view-reqs', component: ViewReqsComponent}
+  {path:'home-manager', component: HomeManagerComponent, canActivate: [AdminGuard]},
+  {path:'home-employee', component: HomeEmployeeComponent, canActivate: [AdminGuard]},
+  {path:'submit-req', component: SubmitReqComponent, canActivate: [AdminGuard]},
+  {path:'edit-user', component: EditUserComponent, canActivate: [AdminGuard]},
+  {path:'view-reqs', component: ViewReqsComponent, canActivate: [AdminGuard]}
 
 ]
 
