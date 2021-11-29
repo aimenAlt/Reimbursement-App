@@ -9,6 +9,7 @@ import {AdminGuard} from "./users/admin.guard";
 import {ViewReqsComponent} from "./employee/reimburse-reqs/view-reqs/view-reqs.component";
 import {EditUserComponent} from "./users/edit-user/edit-user.component";
 import {ViewEmployeeReqsComponent} from "./manager/reimburse-reqs/view-employee-reqs/view-employee-reqs.component";
+import {ViewEmployeesComponent} from "./users/view-employees/view-employees.component";
 
 const routes: Routes= [
   {path:'', component: LoginComponent},
@@ -17,6 +18,7 @@ const routes: Routes= [
   {path:'submit-req', component: SubmitReqComponent, canActivate: [AdminGuard]},
   {path:'edit-user', component: EditUserComponent, canActivate: [AdminGuard]},
   {path:'view-reqs', component: ViewReqsComponent, canActivate: [AdminGuard]},
+  {path:'view-employees', component: ViewEmployeesComponent, canActivate: [AdminGuard]},
   {path:'view-employee-reqs', component: ViewEmployeeReqsComponent, canActivate: [AdminGuard]}
 
 ]

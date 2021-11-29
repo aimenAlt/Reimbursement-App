@@ -1,0 +1,24 @@
+<p>view-users works!</p>
+
+<p>view-reqs works!</p>
+
+<h2>List of Employees</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Address</th>
+    <th>eMail</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let emp of allEmployees">
+    <td>{{ emp.userID }}</td>
+    <td>{{ emp.userName}}</td>
+    <td>{{ emp.userAddress}}</td>
+    <td>{{ emp.userEmail}}</td>
+  </tr>
+  </tbody>
+</table>

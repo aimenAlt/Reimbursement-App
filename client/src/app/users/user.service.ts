@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {User} from "./user.model";
 import {HttpClient} from "@angular/common/http";
+import { Observable } from 'rxjs';
+
 import {Request} from "../employee/reimburse-reqs/request.model";
 
 @Injectable({
@@ -14,10 +16,14 @@ export class UserService {
   constructor(private http: HttpClient ) { }
 
 
-
-  updateUser(user: User){
-    return this.http.put<Request>(this.baseUrl, user);
+  getAllEmployees(): Observable<User[]>{
+    return this.http.get<User[]>(this.baseUrl + '/employees');
   }
+
+  updateUser(user: User): Observable<User>{
+    return this.http.put<User>(this.baseUrl, user);
+  }
+
 
   validateUser(user: User){
     // consume endpoint to validate the user
@@ -36,5 +42,16 @@ export class UserService {
     }
     return user;
   }
+
+  newValidateUser(user: User): Observable<User>{
+    // consume endpoint to validate the user
+    return this.http.get<User>(this.baseUrl + '/login', {
+      params: {
+        userName: user.userName,
+        password: user.userPassword
+      }
+    });
+  }
+
 
 }

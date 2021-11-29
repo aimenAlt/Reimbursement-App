@@ -21,4 +21,8 @@ export class RequestService {
     return this.http.get<Request[]>(this.baseUrl + "/" + employeeID);
   }
 
+  updateRequest(request: Request): Observable<Request>{
+    return this.http.put<Request>(this.baseUrl, request);
+  }
+
 }

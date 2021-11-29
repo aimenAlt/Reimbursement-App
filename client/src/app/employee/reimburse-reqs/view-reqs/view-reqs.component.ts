@@ -32,7 +32,7 @@ export class ViewReqsComponent implements OnInit {
         this.errorMsg = 'something is wrong in loadAllRequests';
         console.log(this.errorMsg);
       }
-    })
+    });
   }
 
 }

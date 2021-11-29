@@ -12,6 +12,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ViewReqsComponent } from './employee/reimburse-reqs/view-reqs/view-reqs.component';
 import {EditUserComponent} from "./users/edit-user/edit-user.component";
 import { ViewEmployeeReqsComponent } from './manager/reimburse-reqs/view-employee-reqs/view-employee-reqs.component';
+import {ViewEmployeesComponent} from "./users/view-employees/view-employees.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ViewEmployeeReqsComponent } from './manager/reimburse-reqs/view-employe
     SubmitReqComponent,
     ViewReqsComponent,
     EditUserComponent,
-    ViewEmployeeReqsComponent
+    ViewEmployeeReqsComponent,
+    ViewEmployeesComponent
   ],
   imports: [
     BrowserModule,
