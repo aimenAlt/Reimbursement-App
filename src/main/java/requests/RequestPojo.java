@@ -2,7 +2,7 @@ package requests;
 
 public class RequestPojo {
 
-    int id;
+    int userID;
     int employeeID;
     String description;
     double cost ;
@@ -10,9 +10,13 @@ public class RequestPojo {
     String status ;
     String imageLink;
 
-    public RequestPojo(int id, int employeeID, String description, double cost, String date, String status, String imageLink) {
+    public RequestPojo() {
         super();
-        this.id = id;
+    }
+
+    public RequestPojo(int userID, int employeeID, String description, double cost, String date, String status, String imageLink) {
+        super();
+        this.userID = userID;
         this.employeeID = employeeID;
         this.description = description;
         this.cost = cost;
