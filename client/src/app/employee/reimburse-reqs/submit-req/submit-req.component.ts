@@ -31,7 +31,14 @@ export class SubmitReqComponent implements OnInit {
   addRequest() {
     this.newReq.employeeID = this.authService.retrieveUserID();
     this.newReq.status = 'pending';
-    this.requestsService.addRequestService(this.newReq); //Continue... .subscribe()
+    this.requestsService.addRequestService(this.newReq).subscribe({
+      next: response => {
+        this.router.navigate(['home-employee']);
+      },
+      error: err => {
+
+      }
+    });
   }
 
 }
