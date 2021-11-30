@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   validateLogin() {
-    let validatedUser: User = this.userService.validateUser(this.newUser);
+    let validatedUser: User = this.userService.newValidateUser(this.newUser);
 
     if (validatedUser.userType != "") {
       this.authService.storeUser(validatedUser);
