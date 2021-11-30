@@ -53,7 +53,7 @@ public class UserDaoImpl implements UserDao{
         PreparedStatement stmt;
         String query = "SELECT * FROM users WHERE user_type=?";
         try {
-            stmt = conn .prepareStatement(query);
+            stmt = conn.prepareStatement(query);
             stmt.setString(1, "employee");
             ResultSet results = stmt.executeQuery();
             users = new ArrayList<UserPojo>();

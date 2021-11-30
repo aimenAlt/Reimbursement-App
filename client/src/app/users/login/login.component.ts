@@ -23,13 +23,16 @@ export class LoginComponent implements OnInit {
   }
 
   validateLogin() {
-    let validatedUser: User = this.userService.validateUser(this.newUser);
+    let validatedUser: User;
+    console.log("in out");
+
     this.userService.newValidateUser(this.newUser).subscribe({
       next: response => {
+        validatedUser = response;
         if (validatedUser.userType != "") {
           this.authService.storeUser(validatedUser);
         }
-
+          console.log("in next");
         if(validatedUser.userType == "employee") {
           this.router.navigate(['home-employee']);
         } else if(validatedUser.userType == "manager") {
