@@ -36,7 +36,7 @@ public class RequestDaoImpl implements RequestDao{
         RequestPojo req = null;
         Connection conn = PostgreSQLAccess.makeConnection();
         PreparedStatement stmt;
-        String query = "UPDATE requests SET description=?, cost=?, date=?, status=?, image_link=? WHERE ID=?";
+        String query = "UPDATE requests SET description=?, cost=?, date=?, status=?, image_link=? WHERE id=?";
         try {
             stmt = conn .prepareStatement(query);
 
@@ -65,7 +65,7 @@ public class RequestDaoImpl implements RequestDao{
         ArrayList<RequestPojo> reqs = null;
         Connection conn = PostgreSQLAccess.makeConnection();
         PreparedStatement stmt;
-        String query = "SELECT * FROM LOTS";
+        String query = "SELECT * FROM requests";
         try {
             stmt = conn .prepareStatement(query);
             ResultSet results = stmt.executeQuery();
@@ -88,7 +88,7 @@ public class RequestDaoImpl implements RequestDao{
         ArrayList<RequestPojo> reqs = null;
         Connection conn = PostgreSQLAccess.makeConnection();
         PreparedStatement stmt;
-        String query = "SELECT * FROM LOTS WHERE employee_id=?";
+        String query = "SELECT * FROM requests WHERE employee_id=?";
         try {
             stmt = conn .prepareStatement(query);
             stmt.setInt(1, employeeID);
