@@ -39,11 +39,6 @@ public class CrudMain {
         });
 
         server.get("api/users/login", (ctx) -> {
-            System.out.println("HEEEEREEEE");
-            System.out.println(ctx.queryParam("userName"));
-            System.out.println(ctx.queryParam("password"));
-            UserPojo usr = userService.validateLogin("boss", "admin");
-            System.out.println(userService.validateLogin(ctx.queryParam("userName"), ctx.queryParam("password")));
             ctx.json(userService.validateLogin(ctx.queryParam("userName"), ctx.queryParam("password")));
         });
 
