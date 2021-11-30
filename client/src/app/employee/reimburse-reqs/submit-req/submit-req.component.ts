@@ -12,7 +12,7 @@ import {AuthService} from "../../../users/auth.service";
 export class SubmitReqComponent implements OnInit {
 
   newReq: Request = {
-    id: 0,
+    requestID: 0,
     employeeID: 0,
     description: '',
     cost: 0.00,
