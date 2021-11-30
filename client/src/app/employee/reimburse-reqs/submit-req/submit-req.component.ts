@@ -11,15 +11,8 @@ import {AuthService} from "../../../users/auth.service";
 })
 export class SubmitReqComponent implements OnInit {
 
-  newReq: Request = {
-    requestID: 0,
-    employeeID: 0,
-    description: '',
-    cost: 0.00,
-    date: '',
-    status: '',
-    imageLink: 'PLACE_HOLDER'
-  }
+  newReq: Request = new Request();
+
 
   constructor(private requestsService: RequestService,
               private router: Router,
