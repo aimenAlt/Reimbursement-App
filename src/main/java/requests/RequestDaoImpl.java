@@ -45,7 +45,7 @@ public class RequestDaoImpl implements RequestDao{
             stmt.setString(3, request.date);
             stmt.setString(4, request.status);
             stmt.setString(5, request.imageLink);
-            stmt.setInt(6, request.userID);
+            stmt.setInt(6, request.requestID);
 
 
             stmt.executeUpdate();
