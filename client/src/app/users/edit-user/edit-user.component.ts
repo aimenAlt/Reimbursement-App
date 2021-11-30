@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from "../user.model";
 import {AuthService} from "../auth.service";
 import {UserService} from "../user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-edit-user',
@@ -13,14 +14,22 @@ export class EditUserComponent implements OnInit {
   updatedUser: User = new User();
 
   constructor(private authService: AuthService,
-              private userService: UserService) { }
+              private userService: UserService,
+              private router: Router ){ }
 
   ngOnInit(): void {
     this.updatedUser = this.authService.retrieveUser();
   }
 
   updateUser() {
-    this.userService.updateUser(this.updatedUser);
+    this.userService.updateUser(this.updatedUser).subscribe({
+      next: response => {
+        this.router.navigate(['home-employee'])
+      },
+      error: err => {
+
+      }
+    });
   }
 
 }
