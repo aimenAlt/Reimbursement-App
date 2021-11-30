@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
 
   newUser: User = new User();
 
+  errMsg: String = '';
+
   constructor(private userService: UserService,
               private authService: AuthService,
               private router: Router) { }
@@ -21,18 +23,27 @@ export class LoginComponent implements OnInit {
   }
 
   validateLogin() {
-    let validatedUser: User = this.userService.newValidateUser(this.newUser);
+    let validatedUser: User = this.userService.validateUser(this.newUser);
+    this.userService.newValidateUser(this.newUser).subscribe({
+      next: response => {
+        if (validatedUser.userType != "") {
+          this.authService.storeUser(validatedUser);
+        }
 
-    if (validatedUser.userType != "") {
-      this.authService.storeUser(validatedUser);
-    }
+        if(validatedUser.userType == "employee") {
+          this.router.navigate(['home-employee']);
+        } else if(validatedUser.userType == "manager") {
+          this.router.navigate(["home-manager"]);
+        }
 
-    if(validatedUser.userType == "employee") {
-      this.router.navigate(['home-employee']);
-    } else if(validatedUser.userType == "manager") {
-      this.router.navigate(["home-manager"]);
-    }
+      },
+      error: err => {
+        this.errMsg = 'Error in Validate Login';
+        console.log(this.errMsg);
+      }
+    });
 
   }
+
 
 }
