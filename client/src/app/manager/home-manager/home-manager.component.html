@@ -1,26 +1,60 @@
-<p>home-manager works!</p>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" href="#">Logo</a>
 
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li
+<h3>Home</h3>
+
+
+<table class="navbar-nav">
+  <tr>
+    <td
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="/view-employee-reqs">View Employee Requests</a>
-    </li>
-    <li
+      <div class="card" style="width: 18rem;">
+        <a class="nav-link" routerLink="/view-employee-reqs">
+          <div class="card-body">
+            <h5 class="card-title">View employees Requests</h5>
+            <h6 class="card-subtitle mb-2 text-muted">View Request submission forms</h6>
+            <p class="card-text">Approve or Deny reimbursement requests</p>
+          </div>
+        </a>
+      </div>
+    </td>
+    <td
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="/view-employees">View Employees</a>
-    </li>
-    <li
+      <div class="card" style="width: 18rem;">
+        <a class="nav-link" routerLink="/view-employees">
+          <div class="card-body">
+            <h5 class="card-title">View Employees</h5>
+<!--            <h6 class="card-subtitle mb-2 text-muted">View submitted Requests</h6>-->
+            <p class="card-text">VIew your employees and each one's requests</p>
+          </div>
+        </a>
+      </div>
+
+    </td>
+
+  </tr>
+  <tr>
+    <td
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="/" (click)="logOut()" >Log Out</a>
-    </li>
-  </ul>
-</nav>
+      <div class="card" style="width: 36rem;">
+        <a class="nav-link" routerLink="/" (click)="logOut()" >
+          <div class="card-body">
+            <h5 class="card-title">Log out</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Sign out</h6>
+            <p class="card-text">Bye Bye</p>
+          </div>
+        </a>
+      </div>
+
+    </td>
+
+  </tr>
+
+</table>
+
+
+
+
 

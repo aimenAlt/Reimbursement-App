@@ -1,31 +1,107 @@
-<p>home-employee works!</p>
+<!--<p>home-employee works!</p>-->
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" href="#">Logo</a>
+<!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">-->
+<!--  &lt;!&ndash; Brand/logo &ndash;&gt;-->
+<!--  <a class="navbar-brand" href="#">Logo</a>-->
 
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li
+<!--  &lt;!&ndash; Links &ndash;&gt;-->
+<!--  <ul class="navbar-nav">-->
+<!--    <li-->
+<!--      class="nav-item"-->
+<!--      *ngIf="isLoggedIn()">-->
+<!--      <a class="nav-link" routerLink="/submit-req">Submit Request</a>-->
+<!--    </li>-->
+<!--    <li-->
+<!--      class="nav-item"-->
+<!--      *ngIf="isLoggedIn()">-->
+<!--      <a class="nav-link" routerLink="/view-reqs">View Requests</a>-->
+<!--    </li>-->
+<!--    <li-->
+<!--      class="nav-item"-->
+<!--      *ngIf="isLoggedIn()">-->
+<!--      <a class="nav-link" routerLink="/edit-user"> User Info </a>-->
+<!--    </li>-->
+<!--    <li-->
+<!--      class="nav-item"-->
+<!--      *ngIf="isLoggedIn()">-->
+<!--      <a class="nav-link" routerLink="/" (click)="logOut()" >Log Out</a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</nav>-->
+
+
+
+<h3>Home</h3>
+
+<!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">-->
+<!-- Brand/logo -->
+<a class="navbar-brand" href="#">Logo</a>
+
+<!-- Links -->
+<table class="navbar-nav">
+  <tr>
+    <td
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="/submit-req">Submit Request</a>
-    </li>
-    <li
+      <div class="card" style="width: 18rem;">
+        <a class="nav-link" routerLink="/submit-req">
+          <div class="card-body">
+            <h5 class="card-title">Submit a Request</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Request Submission Form</h6>
+            <p class="card-text">Request a reimbursement from your manager</p>
+          </div>
+        </a>
+      </div>
+    </td>
+    <td
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="/view-reqs">View Requests</a>
-    </li>
-    <li
+      <div class="card" style="width: 18rem;">
+        <a class="nav-link" routerLink="/view-reqs">
+          <div class="card-body">
+            <h5 class="card-title">View your Requests</h5>
+            <h6 class="card-subtitle mb-2 text-muted">View submitted Requests</h6>
+            <p class="card-text">View your previously submitted requests and their status</p>
+          </div>
+        </a>
+      </div>
+
+    </td>
+
+  </tr>
+  <tr>
+    <td
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="/edit-user"> User Info </a>
-    </li>
-    <li
+      <div class="card" style="width: 18rem;">
+        <a class="nav-link" routerLink="/edit-user">
+          <div class="card-body">
+            <h5 class="card-title">User setting</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Edit your Info</h6>
+            <p class="card-text">Edit your personal information and password.</p>
+          </div>
+        </a>
+      </div>
+    </td>
+    <td
       class="nav-item"
       *ngIf="isLoggedIn()">
-      <a class="nav-link" routerLink="/" (click)="logOut()" >Log Out</a>
-    </li>
-  </ul>
-</nav>
+      <div class="card" style="width: 18rem;">
+        <a class="nav-link" routerLink="/" (click)="logOut()" >
+          <div class="card-body">
+            <h5 class="card-title">Log out</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Sign out</h6>
+            <p class="card-text">Bye Bye</p>
+          </div>
+        </a>
+      </div>
+
+    </td>
+
+  </tr>
+
+</table>
+<!--</nav>-->
+
+
 
