@@ -12,6 +12,9 @@ import {Request} from "../request.model";
 export class ViewEmployeeReqsComponent implements OnInit {
 
   allReqs: Request[] = [];
+  filteredReqs: Request[] = [];
+  filterElement: String = '';
+  filterQuery: String = '';
 
   errorMsg: string = '';
 
@@ -34,6 +37,8 @@ export class ViewEmployeeReqsComponent implements OnInit {
       }
     });
   }
+
+  // filter
 
 
 
