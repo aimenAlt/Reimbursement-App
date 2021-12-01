@@ -17,14 +17,15 @@ public class CrudMain {
                 config.addStaticFiles("/public", Location.CLASSPATH)
         ).start(4040);
 
-        server.post("api/employee-reqs", (ctx) -> {
-            RequestPojo returningReq = requestService.addRequest(ctx.bodyAsClass(RequestPojo.class));
+        //Try Fix error here
+        server.get("api/employee-reqs/{bid}", (ctx) -> {
+            ctx.json(requestService.getAllEmployeeRequests(Integer.parseInt(ctx.pathParam("bid"))));
         });
 
-        //Try Fix error here
-//        server.get("api/employee-reqs/{bid}", (ctx) -> {
-//            ctx.json(requestService.getAllEmployeeRequests(Integer.parseInt(ctx.pathParam("bid"))));
-//        });
+        server.post("api/employee-reqs", (ctx) -> {
+            System.out.println(ctx.bodyAsClass(RequestPojo.class));
+            RequestPojo returningReq = requestService.addRequest(ctx.bodyAsClass(RequestPojo.class));
+        });
 
         server.get("api/manager-reqs", (ctx) -> {
             ctx.json(requestService.getAllRequests());
@@ -41,9 +42,6 @@ public class CrudMain {
         server.get("api/users/login", (ctx) -> {
             ctx.json(userService.validateLogin(ctx.queryParam("userName"), ctx.queryParam("password")));
         });
-
-
-
 
 
     }
