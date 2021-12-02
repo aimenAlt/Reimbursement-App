@@ -43,6 +43,10 @@ public class CrudMain {
             ctx.json(userService.validateLogin(ctx.queryParam("userName"), ctx.queryParam("password")));
         });
 
+        server.get("/api/users/employees", (ctx) -> {
+            ctx.json(userService.getAllEmployees());
+        });
+
 
     }
 }
