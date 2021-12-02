@@ -13,34 +13,33 @@
     <th></th>
   </tr>
   </thead>
+    <tr *ngFor="let req of allReqs">
+      <td>{{ req.requestID }}</td>
+      <td>{{ req.employeeID }}</td>
+      <td>{{ req.description}}</td>
+      <td>{{ req.cost}}</td>
+      <td>{{ req.date}}</td>
+      <td>{{ req.status}}</td>
+      <!--    <td><img [src]="req.bookImage" height="50px" width="80px"/></td>-->
+      <td>{{ req.imageLink }}</td>
+
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger small"
+          (click)="approveRequest(req)">
+          <span class="material-icons">Approve</span>
+        </button>
+      </td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-primary small"
+          (click)="denyRequest(req)">
+          <span class="material-icons">Deny</span>
+        </button>
+      </td>
+    </tr>
   <tbody>
-  <tr *ngFor="let req of allReqs">
-    <td>{{ req.requestID }}</td>
-    <td>{{ req.employeeID }}</td>
-    <td>{{ req.description}}</td>
-    <td>{{ req.cost}}</td>
-    <td>{{ req.date}}</td>
-    <td>{{ req.status}}</td>
-    <!--    <td><img [src]="req.bookImage" height="50px" width="80px"/></td>-->
-    <td>{{ req.imageLink }}</td>
-
-    <td>
-      <button
-        type="button"
-        class="btn btn-danger small"
-        (click)="approveRequest(req)">
-        <span class="material-icons">Approve</span>
-      </button>
-    </td>
-    <td>
-      <button
-        type="button"
-        class="btn btn-primary small"
-        (click)="denyRequest(req)">
-        <span class="material-icons">Deny</span>
-      </button>
-    </td>
-
-  </tr>
   </tbody>
 </table>
